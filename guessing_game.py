@@ -1,19 +1,16 @@
 target = 9
+guess_count = 1
+guess_limit = 5
 
-guess = int(input("Guess: "))
-count = 1
-
-while guess is not target:
+while guess_count < guess_limit:
+    guess = int(input("Guess: "))
+    guess_count += 1
+    if guess_count == guess_limit:
+        print("You lost...")
+        break
     if guess < target:
         print("A bit higher")
     elif guess > target:
         print("A bit lower")
-    elif guess is target:
+    else:
         print("Correct!")
-        break
-    guess = int(input("Guess: "))
-    count = count + 1
-    if count == 5:
-        print("You lost...")
-        break
-
